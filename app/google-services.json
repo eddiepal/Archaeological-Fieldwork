@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "29649682233",
+    "firebase_url": "https://archaeological-fieldwork-af9cb.firebaseio.com",
+    "project_id": "archaeological-fieldwork-af9cb",
+    "storage_bucket": "archaeological-fieldwork-af9cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:29649682233:android:44ff42ea0df372395a32e8",
+        "android_client_info": {
+          "package_name": "com.example.archaeological_fieldwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "29649682233-47b9mhprsmlrnodf2niko569ueprls7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.archaeological_fieldwork",
+            "certificate_hash": "45a28d85d58977e63baaa232c59c0a37f9fc5ec3"
+          }
+        },
+        {
+          "client_id": "29649682233-3dlt3crpuisj478dj6rsg85m7g6qtg7k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoTEHeXqcSRZJrLPEFRHL4dwJtgL4zb1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "29649682233-3dlt3crpuisj478dj6rsg85m7g6qtg7k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
