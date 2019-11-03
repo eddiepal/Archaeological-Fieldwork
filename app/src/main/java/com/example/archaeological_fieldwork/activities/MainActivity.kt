@@ -17,6 +17,7 @@ import org.jetbrains.anko.toast
 
 import com.example.archaeological_fieldwork.R
 import com.example.archaeological_fieldwork.helpers.readImage
+import com.example.archaeological_fieldwork.helpers.showImagePicker
 import com.example.archaeological_fieldwork.models.HillfortModel
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 
@@ -63,6 +64,10 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             info("add Button Pressed: $hillfortName")
             setResult(AppCompatActivity.RESULT_OK)
             finish()
+        }
+
+        chooseImage.setOnClickListener {
+            showImagePicker(this, IMAGE_REQUEST)
         }
     }
 
