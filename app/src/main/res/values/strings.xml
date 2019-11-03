@@ -1,12 +1,14 @@
 <resources>
-    <string name="app_name">Placemark</string>
-    <string name="hint_placemarkTitle">Placemark Title</string>
-    <string name="hint_placemarkDescription">Description </string>
-    <string name="button_addPlacemark">Add Placemark</string>
-    <string name="menu_addPlacemark">Add</string>
-    <string name="menu_cancelPlacemark">Cancel</string>
-    <string name="enter_placemark_title"> Please enter a Placemark Title </string>
-    <string name="save_placemark"> Save Placemark </string>
+    <string name="app_name">Archaeological Fieldwork</string>
+    <string name="hint_hillfortName">Name</string>
+    <string name="hint_hillfortDescription">Description </string>
+    <string name="button_addHillfort">Add Hillfort</string>
+    <string name="menu_addHillfort">Add</string>
+    <string name="menu_cancelHillfort">Cancel</string>
+    <string name="enter_hillfort_name"> Please enter the Hillforts Name </string>
+    <string name="save_hillfort"> Save Hillfort </string>
     <string name="button_addImage"> Add Image </string>
-    <string name="select_placemark_image">Select placemark image</string>
+    <string name="select_hillfort_image">Select Hillfort image</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="visited">Visited</string>
 </resources>
