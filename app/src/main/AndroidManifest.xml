@@ -21,7 +21,7 @@
             android:name=".activities.MapActivity"
             android:label="@string/title_activity_map" />
         <!-- <activity android:name=".activities.HillfortActivity" android:label="Add Hillfort"/> -->
-        <activity android:name=".SignInActivity" />
+        <activity android:name=".activities.SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".AuthActivity" />
         <activity android:name=".activities.HillfortActivity" />

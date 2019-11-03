@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.archaeological_fieldwork.AuthActivity
 import com.example.archaeological_fieldwork.R
 import com.example.archaeological_fieldwork.main.MainApp
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import com.example.archaeological_fieldwork.models.HillfortModel
+import com.firebase.ui.auth.AuthUI
 
 class HillfortListActivity : AppCompatActivity(), HillfortListener {
 
@@ -48,6 +50,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener {
             true
         }
         R.id.action_sign_out ->{
+            signOut()
            // Toast.makeText(this,"Home action",Toast.LENGTH_LONG).show()
             true
         }
@@ -57,6 +60,16 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener {
             // Invoke the superclass to handle it.
             super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun signOut(): Boolean {
+        AuthUI.getInstance()
+            .signOut(this)
+            .addOnCompleteListener {
+                startActivity(Intent(this, AuthActivity::class.java))
+                finish()
+            }
+        return true
     }
 
     override fun onHillfortClick(hillfort: HillfortModel) {

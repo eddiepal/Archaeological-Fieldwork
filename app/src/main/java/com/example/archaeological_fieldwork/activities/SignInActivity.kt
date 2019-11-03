@@ -1,7 +1,8 @@
-package com.example.archaeological_fieldwork
+package com.example.archaeological_fieldwork.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.archaeological_fieldwork.R
 
 class SignInActivity : AppCompatActivity() {
 

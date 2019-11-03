@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.archaeological_fieldwork.activities.HillfortActivity
+import com.example.archaeological_fieldwork.activities.HillfortListActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import kotlinx.android.synthetic.main.activity_auth.*
@@ -37,7 +38,7 @@ class AuthActivity : AppCompatActivity() {
         {
             if(resultCode == Activity.RESULT_OK)
             {
-                startActivity(Intent(this, HillfortActivity::class.java))
+                startActivity(Intent(this, HillfortListActivity::class.java))
             }
             else
             {
