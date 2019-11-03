@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
     lateinit var app: MainApp
     val IMAGE_REQUEST = 1
     val LOCATION_REQUEST = 2
-    var location = Location(52.5120189,-6.2852437, 15f)
+    var location = Location(52.5120189, -6.2852437, 15f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,8 +57,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             hillfort.visited = visitedCheckBox.isChecked
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_name)
-            }
-            else {
+            } else {
                 if (edit) {
                     app.hillforts.update(hillfort.copy())
                 } else {
@@ -75,11 +74,14 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         }
 
         hillfortLocation.setOnClickListener {
-            info ("Set Location Pressed")
+            info("Set Location Pressed")
         }
 
         hillfortLocation.setOnClickListener {
-            startActivityForResult(intentFor<MapActivity>().putExtra("location", location), LOCATION_REQUEST)
+            startActivityForResult(
+                intentFor<MapActivity>().putExtra("location", location),
+                LOCATION_REQUEST
+            )
         }
     }
 
@@ -111,10 +113,10 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
                 if (data != null) {
                     location = data.extras?.getParcelable<Location>("location")!!
                 }
-                }
             }
         }
     }
+}
 
 /*    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -137,4 +139,3 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             }
         return true
     }*/
-}
