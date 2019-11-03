@@ -14,7 +14,7 @@ import com.example.archaeological_fieldwork.models.Location
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var mMap: GoogleMap
+    private lateinit var map: GoogleMap
     var location = Location()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,14 +27,14 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        mMap = googleMap
+        map = googleMap
         val loc = LatLng(location.lat, location.lng)
         val options = MarkerOptions()
-            .title("Hillfort")
+            .title("HillfortTest")
             .snippet("GPS : $loc")
             .draggable(true)
             .position(loc)
-        mMap.addMarker(options)
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
+        map.addMarker(options)
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
     }
 }
