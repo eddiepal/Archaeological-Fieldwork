@@ -91,15 +91,34 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+/*    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when (item?.itemId) {
             R.id.item_cancel -> {
                 finish()
             }
         }
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.item_cancel -> {
+            finish()
+            true
+        }
+/*        R.id.action_profile -> {
+            finish()
+            true
+        }
+        R.id.action_setting -> {
+            finish()
+            true
+        }*/
+        else -> {
+            // If we got here, the user's action was not recognized.
+            // Invoke the superclass to handle it.
+            super.onOptionsItemSelected(item)
+        }
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
