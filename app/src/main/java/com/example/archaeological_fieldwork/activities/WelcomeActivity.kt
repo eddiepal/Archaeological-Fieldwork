@@ -1,10 +1,10 @@
-package com.example.archaeological_fieldwork
+package com.example.archaeological_fieldwork.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.archaeological_fieldwork.activities.MainActivity
+import com.example.archaeological_fieldwork.R
 
 class WelcomeActivity : AppCompatActivity() {
 
@@ -13,7 +13,7 @@ class WelcomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_welcome)
 
         Handler().postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HillfortListActivity::class.java)
             startActivity(intent)
         }, 5000)
     }
