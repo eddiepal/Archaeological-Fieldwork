@@ -7,9 +7,11 @@
         android:id="@+id/item_add"
         android:icon="@android:drawable/ic_menu_add"
         android:title="@string/menu_addHillfort"
-        app:showAsAction="always" />
-<!--        android:id="@+id/action_sign_out"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_sign_out"
         android:title="@string/sign_out"
         android:icon="@drawable/signout"
-        app:showAsAction="always" />-->
+        app:showAsAction="always" />
 </menu>
