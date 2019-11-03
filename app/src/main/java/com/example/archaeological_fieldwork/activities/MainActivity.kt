@@ -49,9 +49,7 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
         btnAdd.setOnClickListener() {
             hillfort.name = hillfortName.text.toString()
             hillfort.description = description.text.toString()
-            Log.d("Test601", hillfort.visited.toString())
             hillfort.visited = visitedCheckBox.isChecked
-            Log.d("Test602", hillfort.visited.toString())
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_name)
             }
