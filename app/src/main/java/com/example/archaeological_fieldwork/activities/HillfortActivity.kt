@@ -20,16 +20,7 @@ import com.example.archaeological_fieldwork.helpers.readImage
 import com.example.archaeological_fieldwork.helpers.showImagePicker
 import com.example.archaeological_fieldwork.models.HillfortModel
 import com.example.archaeological_fieldwork.models.Location
-import kotlinx.android.synthetic.main.activity_main.btnAdd
-import kotlinx.android.synthetic.main.activity_main.chooseImage
-import kotlinx.android.synthetic.main.activity_main.description
-import kotlinx.android.synthetic.main.activity_main.hillfortName
-import kotlinx.android.synthetic.main.activity_main.toolbarAdd
-import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.jetbrains.anko.intentFor
-import android.widget.GridView
-import android.widget.Button
-
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
@@ -37,8 +28,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
     lateinit var app: MainApp
     val IMAGE_REQUEST = 1
     val LOCATION_REQUEST = 2
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +38,6 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
         app = application as MainApp
         var edit = false
-
 
         if (intent.hasExtra("hillfort_edit")) {
             edit = true
