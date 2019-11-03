@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.card_hillfort.view.description
 import kotlinx.android.synthetic.main.card_hillfort.view.hillfortName
 
 interface HillfortListener {
-  fun onPlacemarkClick(hillfort: HillfortModel)
+  fun onHillfortClick(hillfort: HillfortModel)
 }
 
 class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
@@ -36,7 +36,7 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
       itemView.hillfortName.text = hillfort.name
       itemView.description.text = hillfort.description
       itemView.visitedCheckBox?.isChecked = hillfort.visited
-      itemView.setOnClickListener { listener.onPlacemarkClick(hillfort) }
+      itemView.setOnClickListener { listener.onHillfortClick(hillfort) }
     }
   }
 }

@@ -40,7 +40,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener {
     return super.onOptionsItemSelected(item)
   }
 
-  override fun onPlacemarkClick(hillfort: HillfortModel) {
+  override fun onHillfortClick(hillfort: HillfortModel) {
     startActivityForResult(intentFor<MainActivity>().putExtra("hillfort_edit", hillfort), 0)
   }
 

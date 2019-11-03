@@ -10,15 +10,17 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.archaeological_fieldwork.R
+import com.example.archaeological_fieldwork.models.Location
 
 class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    var location = Location()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        location = intent.extras?.getParcelable<Location>("location")!!
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -26,8 +28,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val wit = LatLng(52.5131007,-6.2926894)
-        mMap.addMarker(MarkerOptions().position(wit).title("Marker in Wexford"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(wit, 12f))
+        val loc = LatLng(location.lat, location.lng)
+        val options = MarkerOptions()
+            .title("Hillfort")
+            .snippet("GPS : $loc")
+            .draggable(true)
+            .position(loc)
+        mMap.addMarker(options)
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, location.zoom))
     }
 }

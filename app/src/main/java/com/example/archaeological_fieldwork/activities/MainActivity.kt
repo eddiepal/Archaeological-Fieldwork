@@ -19,6 +19,7 @@ import com.example.archaeological_fieldwork.R
 import com.example.archaeological_fieldwork.helpers.readImage
 import com.example.archaeological_fieldwork.helpers.showImagePicker
 import com.example.archaeological_fieldwork.models.HillfortModel
+import com.example.archaeological_fieldwork.models.Location
 import kotlinx.android.synthetic.main.card_hillfort.view.*
 import org.jetbrains.anko.intentFor
 
@@ -71,12 +72,13 @@ class MainActivity : AppCompatActivity(), AnkoLogger {
             showImagePicker(this, IMAGE_REQUEST)
         }
 
-        placemarkLocation.setOnClickListener {
+        hillfortLocation.setOnClickListener {
             info ("Set Location Pressed")
         }
 
-        placemarkLocation.setOnClickListener {
-            startActivity (intentFor<MapActivity>())
+        hillfortLocation.setOnClickListener {
+            val location = Location(52.5120189,-6.2852437, 15f)
+            startActivity (intentFor<MapActivity>().putExtra("location", location))
         }
     }
 
