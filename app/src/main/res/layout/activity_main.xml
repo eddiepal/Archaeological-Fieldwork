@@ -67,6 +67,14 @@
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="14sp"/>
 
+                <CheckBox
+                    android:id="@+id/visitedCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:checked="false"
+                    android:text="@string/visited" />
+
                 <Button
                     android:id="@+id/chooseImage"
                     android:layout_width="match_parent"
@@ -85,20 +93,6 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/splash_logo"/>
 
-
-                <Button
-                    android:id="@+id/btnAdd"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@color/colorAccent"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp"
-                    android:stateListAnimator="@null"
-                    android:text="@string/button_addHillfort"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="16sp" />
-
                 <Button
                     android:id="@+id/hillfortLocation"
                     android:layout_width="match_parent"
@@ -112,12 +106,18 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="16sp"/>
 
-                <CheckBox
-                    android:id="@+id/visitedCheckBox"
+                <Button
+                    android:id="@+id/btnAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="@string/visited" />
+                    android:layout_margin="16dp"
+                    android:background="@color/colorAccent"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:stateListAnimator="@null"
+                    android:text="@string/button_addHillfort"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="16sp" />
             </LinearLayout>
         </ScrollView>
 
