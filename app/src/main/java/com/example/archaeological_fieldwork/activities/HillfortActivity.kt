@@ -1,11 +1,14 @@
 package com.example.archaeological_fieldwork.activities
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import androidx.annotation.RequiresApi
 import com.example.archaeological_fieldwork.helpers.readImageFromPath
 import com.example.archaeological_fieldwork.main.MainApp
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,6 +24,11 @@ import com.example.archaeological_fieldwork.helpers.showImagePicker
 import com.example.archaeological_fieldwork.models.HillfortModel
 import com.example.archaeological_fieldwork.models.Location
 import org.jetbrains.anko.intentFor
+
+import android.app.DatePickerDialog
+import android.icu.util.Calendar
+
+import android.widget.Toast
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger {
 
@@ -44,6 +52,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
             hillfort = intent.extras?.getParcelable<HillfortModel>("hillfort_edit")!!
             hillfortName.setText(hillfort.name)
             description.setText(hillfort.description)
+            dateTextView.text = hillfort.date
             visitedCheckBox.isChecked = (hillfort.visited)
             hillfortImage.setImageBitmap(readImageFromPath(this, hillfort.image))
             btnAdd.setText(R.string.save_hillfort)
@@ -52,6 +61,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
         btnAdd.setOnClickListener() {
             hillfort.name = hillfortName.text.toString()
             hillfort.description = description.text.toString()
+            hillfort.date = dateTextView.text.toString()
             hillfort.visited = visitedCheckBox.isChecked
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_name)
@@ -120,6 +130,23 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger {
                 }
             }
         }
+    }
+
+    //Reference: https://tutorial.eyehunts.com/android/android-date-picker-dialog-example-kotlin/
+    @RequiresApi(Build.VERSION_CODES.N)
+    fun clickDataPicker(view: View) {
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        val dpd = DatePickerDialog(this, DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+            // Display Selected date in Toast
+            var dateText = ("""Date Visited: $dayOfMonth - ${monthOfYear + 1} - $year""")
+            dateTextView.text = dateText.toString()
+
+        }, year, month, day)
+        dpd.show()
     }
 }
 
