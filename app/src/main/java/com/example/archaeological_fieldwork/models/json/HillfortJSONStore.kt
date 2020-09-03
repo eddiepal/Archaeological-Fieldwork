@@ -18,7 +18,7 @@ fun generateRandomId(): Long {
     return Random().nextLong()
 }
 
-class PlacemarkJSONStore : HillfortStore, AnkoLogger {
+class HillfortJSONStore : HillfortStore, AnkoLogger {
 
     val context: Context
     var hillforts = mutableListOf<HillfortModel>()

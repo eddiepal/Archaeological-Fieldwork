@@ -20,8 +20,8 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
   }
 
   override fun findById(id:Long) : HillfortModel? {
-    val foundPlacemark: HillfortModel? = hillforts.find { it.id == id }
-    return foundPlacemark
+    val foundHillfort: HillfortModel? = hillforts.find { it.id == id }
+    return foundHillfort
   }
 
   override fun findAll(): List<HillfortModel> {
@@ -42,9 +42,9 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
       foundHillfort.image = hillfort.image
       foundHillfort.visited = hillfort.visited
       foundHillfort.date = hillfort.date
-      foundHillfort.lat = hillfort.lat
+/*      foundHillfort.lat = hillfort.lat
       foundHillfort.lng = hillfort.lng
-      foundHillfort.zoom = hillfort.zoom
+      foundHillfort.zoom = hillfort.zoom*/
     }
   }
 
