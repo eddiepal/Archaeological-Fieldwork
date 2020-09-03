@@ -4,6 +4,7 @@ import com.example.archaeological_fieldwork.models.HillfortModel
 import com.example.archaeological_fieldwork.views.BasePresenter
 import com.example.archaeological_fieldwork.views.BaseView
 import com.example.archaeological_fieldwork.views.VIEW
+import com.google.firebase.auth.FirebaseAuth
 import org.jetbrains.anko.doAsync
 import org.jetbrains.anko.uiThread
 
@@ -31,6 +32,8 @@ class HillfortListPresenter(view: BaseView) : BasePresenter(view) {
   }
 
   fun doLogout() {
+    FirebaseAuth.getInstance().signOut()
+    app.hillforts.clear()
     view?.navigateTo(VIEW.LOGIN)
   }
 }

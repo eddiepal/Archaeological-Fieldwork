@@ -2,6 +2,7 @@ package com.example.archaeological_fieldwork.views.hillfort
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.util.Log
 import com.example.archaeological_fieldwork.helpers.checkLocationPermissions
 import com.example.archaeological_fieldwork.helpers.createDefaultLocationRequest
 import com.example.archaeological_fieldwork.helpers.isPermissionGranted
@@ -43,6 +44,7 @@ class HillfortPresenter(view: BaseView) : BasePresenter(view) {
 
   @SuppressLint("MissingPermission")
   fun doSetCurrentLocation() {
+    Log.d("addcrash", locationService.lastLocation.toString())
     locationService.lastLocation.addOnSuccessListener {
       locationUpdate(Location(it.latitude, it.longitude))
     }
