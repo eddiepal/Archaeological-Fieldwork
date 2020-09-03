@@ -37,11 +37,11 @@ class HillfortMemStore : HillfortStore, AnkoLogger {
   override fun update(hillfort: HillfortModel) {
     var foundHillfort: HillfortModel? = hillforts.find { p -> p.id == hillfort.id }
     if (foundHillfort != null) {
-      foundHillfort.name = hillfort.name
+      foundHillfort.title = hillfort.title
       foundHillfort.description = hillfort.description
       foundHillfort.image = hillfort.image
-      foundHillfort.visited = hillfort.visited
-      foundHillfort.date = hillfort.date
+/*      foundHillfort.visited = hillfort.visited
+      foundHillfort.date = hillfort.date*/
 /*      foundHillfort.lat = hillfort.lat
       foundHillfort.lng = hillfort.lng
       foundHillfort.zoom = hillfort.zoom*/

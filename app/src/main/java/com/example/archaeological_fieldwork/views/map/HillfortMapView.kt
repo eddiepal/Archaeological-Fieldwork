@@ -1,6 +1,7 @@
 package com.example.archaeological_fieldwork.views.map
 
 import android.os.Bundle
+import com.bumptech.glide.Glide
 import com.example.archaeological_fieldwork.R
 import com.example.archaeological_fieldwork.helpers.readImageFromPath
 import com.example.archaeological_fieldwork.views.BaseView
@@ -33,7 +34,7 @@ class HillfortMapView : BaseView(), GoogleMap.OnMarkerClickListener {
   override fun showHillfort(hillfort: HillfortModel) {
     currentTitle.text = hillfort.title
     currentDescription.text = hillfort.description
-    currentImage.setImageBitmap(readImageFromPath(this, hillfort.image))
+    Glide.with(this).load(hillfort.image).into(currentImage);
   }
 
   override fun showHillforts(hillforts: List<HillfortModel>) {
