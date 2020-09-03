@@ -1,5 +1,7 @@
-package com.example.archaeological_fieldwork.models
+package com.example.archaeological_fieldwork.models.mem
 
+import com.example.archaeological_fieldwork.models.HillfortModel
+import com.example.archaeological_fieldwork.models.HillfortStore
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
 
@@ -12,6 +14,15 @@ internal fun getId(): Long {
 class HillfortMemStore : HillfortStore, AnkoLogger {
 
   val hillforts = ArrayList<HillfortModel>()
+
+  override fun delete(hillfort: HillfortModel) {
+    hillforts.remove(hillfort)
+  }
+
+  override fun findById(id:Long) : HillfortModel? {
+    val foundPlacemark: HillfortModel? = hillforts.find { it.id == id }
+    return foundPlacemark
+  }
 
   override fun findAll(): List<HillfortModel> {
     return hillforts
